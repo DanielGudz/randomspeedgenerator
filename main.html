@@ -1,0 +1,37 @@
+<html> 
+ <head>
+    <title></title> 
+</head>
+ <body>
+    <p align="center"> 
+      <canvas id="mycanvas"></canvas> 
+    </p>
+ </body> 
+ <script src="processing.js"></script> 
+ <script>
+var sketchProc = function(processingInstance) {
+with (processingInstance) {
+//START
+size(600, 400); 
+frameRate(30);
+
+fill(0, 0, 0);
+var randNumx = floor(random(-5, 5));
+var randNumy = floor(random(-5, 5));
+
+keyPressed = function() {
+    background(219, 175, 219);
+    randNumx = floor(random(-5, 5));
+    randNumy = floor(random(-5, 5));
+    text("X speed is " + randNumx + ".", 168, 200);
+    text("Y speed is " + randNumy + ".", 167, 219);
+};
+//END
+}
+};
+
+var canvas = document.getElementById("mycanvas"); 
+var processingInstance = new Processing(canvas, sketchProc); 
+ </script>
+
+</html>
